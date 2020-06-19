@@ -5,11 +5,11 @@ fontFamily : 'Bahnscrift',
 fontWeight : 'Bold',
 textAlign :'center',
 width: '100%',
-border:'1px solid',
 fontSize : "1.5rem",
 backgroundColor : '#2C006E',
 color:'white',
-padding : "1rem 0"
+padding : "1rem 0",
+height : "4rem"
 }
 
 function TopBarComponent() {

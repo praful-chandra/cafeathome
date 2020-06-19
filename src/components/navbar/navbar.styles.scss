@@ -1,0 +1,50 @@
+.navbar{
+    &-wrapper{
+        width: 100%;
+        position: fixed;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: all 0.2s ease;
+    }
+
+    &-scrolled{
+        background-color: #313131;
+        top: 0;
+        z-index: 100000;
+
+        &>div>div>img{
+            width: 50%;
+        }
+    }
+
+    &-content{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &-logo{
+        width: 11rem;
+        & img{
+            width: 100%;
+        }
+    }
+
+    &-menu{
+        list-style: none;
+        display: flex;
+        height: min-content;
+        width: 70%;
+        font-family: 'berlin';
+        justify-content: space-evenly;
+        & li button{
+            background-color: transparent;
+            outline: none;
+            border: none;
+            cursor: pointer;
+            font-size: 2rem;
+            margin: 0 2rem;
+            color: #fff;
+        }
+    }
+}
