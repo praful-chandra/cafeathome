@@ -6,6 +6,7 @@ import HeroComponent from "./components/hero/hero.component";
 import MenuLiteComponent from "./components/menu-lite/menuLite.component";
 import PromotionalBannerComponent from "./components/promotionBanner.component";
 import AboutUsComponent from "./components/aboutUs/aboutus.component";
+import InfoBannerComponent from "./components/infoBanner/infoBanner.component";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <MenuLiteComponent/>
         <PromotionalBannerComponent />
         <AboutUsComponent />
+        <InfoBannerComponent/>
     </div>
   );
 }

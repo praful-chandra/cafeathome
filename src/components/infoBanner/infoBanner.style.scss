@@ -1,0 +1,27 @@
+.infobanner {
+  &-wrapper {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+      url("../../asset/info-banner.png");
+      padding: 5rem 0;
+      color: #fff;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+  }
+
+  &-content{
+      &>div{
+          margin: 4rem 0;
+          font-family: 'agencyfb';
+      }
+      & div:first-child{
+          font-size: 5rem;
+        
+          font-weight: bold;
+      }
+      & div:last-child{
+        font-size: 3rem;
+        width: 50%;
+      }
+  }
+}

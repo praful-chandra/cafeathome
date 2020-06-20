@@ -16,8 +16,9 @@ function NavbarComponent() {
             <ul className="navbar-menu" >
                     <li> <button>Menu</button> </li>
                     <li> <button>About Us</button> </li>
-                    <li> <button>Location</button> </li>
+                    {/* <li> <button>Location</button> </li> */}
                     <li> <button>Contact</button> </li>
+                    <li> <button>Cart</button> </li>
                 </ul>
            </div>
         </div>
