@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 
+import ButtonComponent from "../button.component";
+
 function MenuLite() {
   const [selected, setSelected] = useState(-1);
   const items = [
@@ -133,8 +135,9 @@ function MenuLite() {
           </div>
         ))}
 
-        {/*  menulite-menu-dropdown-selected */}
       </div>
+      <ButtonComponent title="View Menu" />
+
     </div>
   );
 }
