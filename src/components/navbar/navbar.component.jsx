@@ -14,11 +14,11 @@ function NavbarComponent() {
                
             </div>
             <ul className="navbar-menu" >
-                    <li> <button>Menu</button> </li>
-                    <li> <button>About Us</button> </li>
+                    <li> <button><a href="#menuLite">Menu</a></button> </li>
+                    <li> <button><a href="#aboutUs">About Us</a></button> </li>
                     {/* <li> <button>Location</button> </li> */}
-                    <li> <button>Contact</button> </li>
-                    <li> <button>Cart</button> </li>
+                    <li> <button><a href="#footer">Contact</a></button> </li>
+                    <li> <button><a href="/">Cart</a></button> </li>
                 </ul>
            </div>
         </div>

@@ -2,7 +2,7 @@ import React from "react";
 
 function AboutUsComponent() {
   return (
-    <div className="aboutus-wrapper">
+    <div className="aboutus-wrapper" id="aboutUs">
       <div className="aboutus-content center">
         <div className="aboutus-content-left">
           <div>About Us</div>

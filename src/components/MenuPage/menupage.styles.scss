@@ -1,0 +1,136 @@
+.menupage {
+  &-wrapper {
+    min-height: 100vh;
+  }
+
+  &-hero {
+    width: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+      url("../../asset/menuHero.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 10rem;
+    &-nav {
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5rem;
+      & > div:first-child {
+        width: 4%;
+
+        & img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      & > div:not(:first-child){
+        color: #fff;
+        font-size: 4rem;
+        font-family: "Bebas Neue", cursive;
+      }
+    }
+
+    &-title {
+      color: #fff;
+      font-size: 8rem;
+      text-align: center;
+      margin-top: 10rem;
+      font-family: "PhosphateInline";
+    }
+  }
+
+  &-content {
+    color: #4e4e4e;
+    &-section {
+      & > div:first-child {
+        text-align: center;
+        font-size: 5rem;
+        margin: 3rem 0;
+        font-family: "Bahnscrift";
+        font-weight: bold;
+      }
+
+      & > div:last-child {
+        & ul {
+          list-style: none;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+
+          & li{
+              margin: 3rem;
+          }
+          & li div {
+            width: 30rem;
+            height: 35rem;
+            box-shadow: 10px 10px 10px rgba(51, 51, 51, 0.24);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: space-between;
+            & img {
+              width: 100%;
+              height: 50%;
+              object-fit: cover;
+            }
+
+            & span {
+              display: block;
+              font-size: 2.5rem;
+              padding: 0 2rem;
+              font-family: 'Bahnscrift';
+              font-weight: 100;
+            }
+
+            & button{
+                cursor: pointer;
+                background-color: #fff;
+                font-size: 2rem;    
+                padding: 2rem 3rem;
+                margin-left: 2rem;
+                &:hover{
+                    color: #fff;
+                    background-color: #4e4e4e;
+                }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+.floatingCart{
+    width: 10rem;
+    height: 10rem;
+    background-color: #4e4e4e;
+    border-radius: 100%;
+    position: fixed;
+    bottom: 5rem;
+    right: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 4rem;
+    cursor: pointer;
+
+    &>div{
+        font-size: 2rem;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 100%;
+        background-color: #ff0000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        transform: translate(2rem,-1rem);
+        font-family: 'Bebas Neue', cursive;
+    }
+}
