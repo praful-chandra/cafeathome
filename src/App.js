@@ -13,6 +13,7 @@ import InfoBannerComponent from "./components/infoBanner/infoBanner.component";
 import FooterCompoenent from "./components/footer/footer.component";
 
 import MenuPage from "./components/MenuPage/menupage.screen";
+import CartScreen from "./components/cart/cart.screen";
 
 const homepage = () => (
   <>
@@ -33,6 +34,7 @@ function App() {
     <div className="App">
       <Route exact path="/" component={homepage} />
       <Route exact path="/menu" component={MenuPage} />
+      <Route exact path="/cart" component={CartScreen} />
       <FooterCompoenent />
     </div>
    </BrowserRouter>
