@@ -29,7 +29,7 @@ e.target.style.background = "#fff";
 
 function ButtonComponent(props) {
     return (
-        <button style={style}  onMouseOver={btnHoverEffect} onMouseLeave={btnHoverEffectOver} >{props.title}</button>
+        <button style={style} onClick={props.cb}  onMouseOver={btnHoverEffect} onMouseLeave={btnHoverEffectOver} >{props.title}</button>
     )
 }
 

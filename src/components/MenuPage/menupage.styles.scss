@@ -120,7 +120,7 @@
     font-size: 4rem;
     cursor: pointer;
 
-    &>div{
+    &-count{
         font-size: 2rem;
         width: 3rem;
         height: 3rem;
@@ -132,5 +132,55 @@
         position: absolute;
         transform: translate(2rem,-1rem);
         font-family: 'Bebas Neue', cursive;
+    }
+
+
+    &-content{
+      position: fixed;
+      bottom: 15rem;
+      right: 0;
+      width: 30rem;
+      height: 50rem;
+      background-color: #fff;
+      border: 1px solid #000;
+      color: #4e4e4e;
+      font-size: 2rem;
+      font-family: 'Bahnscrift';
+      padding: 2rem;
+      border-radius: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      &>div:first-child{
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 1rem;
+      }
+      &>div:nth-child(2){
+        width: 100%;
+        height: 80%;
+        overflow-y: scroll;
+        &::-webkit-scrollbar{
+          width: 0;
+        }
+      }
+      &-item{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        text-align: left;
+        border-bottom: 1px solid;
+        margin: 2rem 0;
+        & span:first-child{
+          color: red;
+          font-weight: bold;
+          cursor: pointer;
+        }
+        & span:nth-child(2){
+          width: 70%;
+
+        }
+      }
     }
 }

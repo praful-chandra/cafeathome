@@ -1,23 +1,86 @@
-import React from "react";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faShoppingBag} from "@fortawesome/free-solid-svg-icons";
+import React, { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faShoppingBag } from "@fortawesome/free-solid-svg-icons";
 import items from "../../data";
 
-function MenuPageScreen() {
+import ButtonComponent from "../button.component";
+
+function MenuPageScreen(props) {
+  const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+  const [cart, setCart] = useState(cartItems);
+  const [showCart, setShowCart] = useState(true);
+
+  const addToCart = (newItem) => {
+    let existingItem = cart.find((item) => item._id === newItem._id);
+    if (existingItem) {
+      setCart((cartItems) => {
+        let newCart = cartItems.map((item) => {
+          if (item._id === newItem._id)
+            return { ...item, quantity: item.quantity + 1 };
+
+          return item;
+        });
+        saveToLocal(newCart);
+        return newCart;
+      });
+    } else
+      setCart((cartItems) => {
+        let newCart = [...cartItems, { ...newItem, quantity: 1 }];
+        saveToLocal(newCart);
+        return newCart;
+      });
+  };
+
+  const removeFromCart = itemId =>{
+    setCart(olditms=>{
+      const newCart = olditms.filter(itm=> itm._id !== itemId);
+      saveToLocal(newCart);
+      return newCart;
+    })
+  }
+
+  const saveToLocal = (newCart) => {
+    const jsonString = JSON.stringify(newCart);
+    localStorage.setItem("cartItems", jsonString);
+  };
+
   return (
     <div className="menupage-wrapper">
-        <div className="floatingCart">
+      <div className="floatingCart" onClick={() => setShowCart((ssc) => !ssc)}>
         <FontAwesomeIcon icon={faShoppingBag} />
-        <div>0</div>
+        <div className="floatingCart-count">{cart.length}</div>
+      </div>
+
+      <div className={`floatingCart-content ${showCart ? "" : "hidden"}`}>
+        <div>Your Items</div>
+        <div>
+          {cart.map((itm) => (
+            <div
+              className="floatingCart-content-item"
+              key={"itemdloat" + itm._id}
+            >
+              <span onClick={()=>removeFromCart(itm._id)} >X</span>
+
+              <span>{itm.name}</span>
+              <span>{itm.quantity}</span>
+            </div>
+          ))}
         </div>
+        <ButtonComponent cb={() => props.history.push("/cart")} title="Cart" />
+      </div>
+
       <div className="menupage-hero">
         <div className="menupage-hero-nav">
           <div>
-            
-            <a href="/"><img src={require("../../logo.svg")} alt="" srcset="" /></a>
+            <a href="/">
+              <img src={require("../../logo.svg")} alt="" />
+            </a>
           </div>
           <div>Café @ Home</div>
-          <div> <FontAwesomeIcon icon={faShoppingBag} /> </div>
+          <div>
+            {" "}
+            <FontAwesomeIcon onClick={() => props.history.push("/cart")} icon={faShoppingBag} />{" "}
+          </div>
         </div>
         <div className="menupage-hero-title">MENU</div>
       </div>
@@ -34,7 +97,7 @@ function MenuPageScreen() {
                         <img src={items.image} alt="" />
                         <span>{items.name}</span>
                         <span>Rs. {items.price}</span>
-                        <button>Add</button>
+                        <button onClick={() => addToCart(items)}>Add</button>
                       </div>
                     </li>
                   ))}

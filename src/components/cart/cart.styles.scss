@@ -8,7 +8,9 @@
         align-items: center;
         justify-content: space-between;
         padding: 0 5rem;
-        background-color: #aaa;
+        background-color: #4e4e4e;
+
+        margin-bottom: 5rem;
         &-logo{
             width: 5%;
 
@@ -33,7 +35,7 @@
         color: #4e4e4e;
         font-size: 8rem;
         text-align: center;
-        margin: 5rem 0;
+        margin: 10rem 0;
         font-family: "PhosphateInline";
     }
 
@@ -43,7 +45,7 @@
             // height: 50vh;
         }
 
-        width: 70%;
+        width: 80%;
         margin: 2rem auto;
         height: 10rem;
         box-shadow: 5px 5px 10px rgba(150, 149, 149, 0.521);
@@ -53,22 +55,25 @@
         &>div{
             text-align: center;
             color: #4e4e4e;
-            font-size: 3rem;
+            font-size: 2rem;
             font-family: 'Raleway', sans-serif;
 
         }
         &-img{
             width: 10%;
             & img{
-                width: 70%;
+                width: 6rem;
+                height: 6rem;
+                object-fit: cover;
                 border-radius: 100%;
             }
         }
         &-name{
             width: 20%;
+            text-align: left;
         }
         &-quantity{
-            width: 40%;
+            width: 45%;
             & button{
                 color: #4e4e4e;
                 background-color: transparent;
@@ -87,7 +92,14 @@
             }
         }
         &-price{
-            width: 20%;
+            width: 15%;
+        }
+        &-remove{
+            cursor: pointer;
+            transition: all 0.2s;
+            &:hover{
+                color: red;
+            }
         }
     }
     &-total{

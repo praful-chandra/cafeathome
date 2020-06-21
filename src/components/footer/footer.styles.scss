@@ -42,3 +42,18 @@
         }
     }
 }
+
+//*--------------RESPONSIVE---------------------------
+
+
+@media only screen and(max-width : 510px){
+    .footer-contact > div:last-child{
+        flex-direction: column;
+        justify-content: space-between;
+        &>div{
+            margin-top: 5rem;
+        }
+    }
+}
+
+//*--------------RESPONSIVE---------------------------
