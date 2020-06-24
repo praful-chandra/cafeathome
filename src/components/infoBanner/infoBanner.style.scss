@@ -25,3 +25,21 @@
       }
   }
 }
+
+//*-------------------------RESPONSIVE---------------------------------------
+
+
+@media only screen and(max-width:1000px){
+  .infobanner{
+    &-content{
+      text-align: center;
+      width: 100%;
+
+      & div:last-child{
+        width: 100%;
+      }
+    }
+  }
+}
+
+//*-------------------------RESPONSIVE---------------------------------------

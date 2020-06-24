@@ -72,7 +72,7 @@ export default [
       ],
     },{
         _id : 2,
-        name : "milk",
+        name : "Health Drinks",
         content:[
             {   _id:"21",
                 image : require("./asset/milk/boost.jpeg"),

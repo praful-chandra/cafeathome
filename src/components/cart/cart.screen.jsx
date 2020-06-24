@@ -95,7 +95,7 @@ function CartScreen() {
         ))}
 
         <div className="cart-total">
-          <div>{totalPrice()}</div>
+          <div> Rs. {totalPrice()}</div>
           <ButtonComponent title="Checkout" />
         </div>
       </div>

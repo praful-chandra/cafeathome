@@ -5,12 +5,13 @@ import "./scss/root.scss";
 import TopBarComponent from "./components/topBar.component";
 import NavbarComponent from "./components/navbar/navbar.component";
 import HeroComponent from "./components/hero/hero.component";
-import MenuLiteComponent from "./components/menu-lite/menuLite.component";
+// import MenuLiteComponent from "./components/menu-lite/menuLite.component";
 import PromotionalBannerComponent from "./components/promotionBanner.component";
 import AboutUsComponent from "./components/aboutUs/aboutus.component";
 import AboutUsComponent2 from "./components/aboutUs/aboutUs.2.component";
 import InfoBannerComponent from "./components/infoBanner/infoBanner.component";
 import FooterCompoenent from "./components/footer/footer.component";
+import FloatingBtnComponent from "./components/floatingBtn.component";
 
 import MenuPage from "./components/MenuPage/menupage.screen";
 import CartScreen from "./components/cart/cart.screen";
@@ -21,6 +22,7 @@ const homepage = () => (
     <NavbarComponent />
     <HeroComponent />
     {/* <MenuLiteComponent /> */}
+    <FloatingBtnComponent />
     <PromotionalBannerComponent />
     <AboutUsComponent />
     <InfoBannerComponent />
