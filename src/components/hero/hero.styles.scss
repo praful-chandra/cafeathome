@@ -24,7 +24,7 @@
 
     &-sub{
       font-size: 2rem;
-      font-family: 'Bahnscrift';
+      // font-family: 'Bahnscrift';
       font-weight: 100;
     }
     &-btn{
@@ -55,12 +55,12 @@
 
   &-foot{
     position: absolute;
-    bottom: 2rem;
+    bottom: 20rem;
     right: 2rem;
     color: #fff;
-    font-family: 'agencyfb';
+    // font-family: 'agencyfb';
     font-weight: bold;
-    font-size: 2rem;
+    font-size: 4rem;
   }
 }
 

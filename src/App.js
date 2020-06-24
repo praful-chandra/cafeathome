@@ -5,7 +5,7 @@ import "./scss/root.scss";
 import TopBarComponent from "./components/topBar.component";
 import NavbarComponent from "./components/navbar/navbar.component";
 import HeroComponent from "./components/hero/hero.component";
-// import MenuLiteComponent from "./components/menu-lite/menuLite.component";
+import MenuLiteComponent from "./components/menu-lite/menuLite.component";
 import PromotionalBannerComponent from "./components/promotionBanner.component";
 import AboutUsComponent from "./components/aboutUs/aboutus.component";
 import AboutUsComponent2 from "./components/aboutUs/aboutUs.2.component";
@@ -21,7 +21,7 @@ const homepage = () => (
     <TopBarComponent />
     <NavbarComponent />
     <HeroComponent />
-    {/* <MenuLiteComponent /> */}
+    <MenuLiteComponent />
     <FloatingBtnComponent />
     <PromotionalBannerComponent />
     <AboutUsComponent />

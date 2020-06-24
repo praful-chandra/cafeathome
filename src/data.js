@@ -1,4 +1,44 @@
 export default [
+  {
+    _id: 1,
+    name: "Coffee",
+    content: [
+      {
+           _id:"11",
+        image: require("./asset/coffee/americano.jpg"),
+        name: "Americano",
+        price: 50,
+      },
+      {
+           _id:"12",
+        image: require("./asset/coffee/expressoShot.jpeg"),
+        name: "Expresso",
+        price: 40,
+      },
+      {
+           _id:"13",
+        image: require("./asset/coffee/expressoShot.jpeg"),
+        name: "Expresso doubleshot",
+        price: 70,
+      },
+      {
+        _id:"14",
+     image: require("./asset/coffee/expressoShot.jpeg"),
+     name: "Expresso doubleshot",
+     price: 70,
+   },
+      {
+           _id:"15",
+        image: require("./asset/milk/hotchocolate.jpg"),
+        name: "HotChocolate",
+        price: 40,
+        extras : {
+          name : "Extra Syrup",
+          price : 10
+        }
+      },
+    ],
+  },
     {
       _id: 0,
       name: "Tea",
@@ -42,35 +82,6 @@ export default [
       ],
     },
     {
-      _id: 1,
-      name: "Coffee",
-      content: [
-        {
-             _id:"11",
-          image: require("./asset/coffee/americano.jpg"),
-          name: "Americano",
-          price: 50,
-        },
-        {
-             _id:"12",
-          image: require("./asset/coffee/expressoShot.jpeg"),
-          name: "Expresso",
-          price: 50,
-        },
-        {
-             _id:"13",
-          image: require("./asset/coffee/expressoShot.jpeg"),
-          name: "Expresso doubleshot",
-          price: 70,
-        },
-        {
-             _id:"14",
-          image: require("./asset/coffee/filtercoffee.jpg"),
-          name: "Filter Coffee",
-          price: 40,
-        },
-      ],
-    },{
         _id : 2,
         name : "Health Drinks",
         content:[
@@ -86,9 +97,30 @@ export default [
             },
             {   _id:"23",
                 image : require("./asset/milk/hotchocolate.jpg"),
-                name : "HotChocolate",
+                name : "Immunity Booster with turmerix + milk",
                 price : 40
+            },
+            {   _id:"24",
+                image : require("./asset/milk/hotchocolate.jpg"),
+                name : "milk",
+                price : 30
             },
         ]
     }
+    ,{
+      _id : 3,
+      name : "Soup",
+      content:[
+          {   _id:"31",
+              image : require("./asset/milk/boost.jpeg"),
+              name : "Tomato Soup",
+              price : 40
+          },
+          {   _id:"32",
+              image : require("./asset/milk/horlics.jpeg"),
+              name : "Hot & sour Soup",
+              price : 40
+          },
+      ]
+  }
   ];

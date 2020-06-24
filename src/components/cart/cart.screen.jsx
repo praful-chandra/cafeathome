@@ -51,6 +51,9 @@ function CartScreen() {
     let sum = 0;
 
     cart.map((itm) => {
+      if(itm.extras)
+      sum += itm.quantity * (itm.price+itm.extras.price);
+      else
       sum += itm.quantity * itm.price;
       return itm;
     });
@@ -76,14 +79,20 @@ function CartScreen() {
             <div className="cart-item-img">
               <img src={itm.image} alt="" />
             </div>
-            <div className="cart-item-name">{itm.name}</div>
+            <div className="cart-item-name">
+            {itm.name}
+            {
+              itm.extras ? <div>{itm.extras.name}</div> : null
+            }
+            </div>
             <div className="cart-item-quantity">
               <button onClick={() => incrementItem(itm._id)}>+</button>{" "}
               <span>{itm.quantity}</span>
                <button onClick={()=> DecrementItem(itm._id)} >-</button>
             </div>
             <div className="cart-item-price">
-              Rs. {itm.price * itm.quantity}
+            
+              Rs. {itm.extras ? (itm.price+itm.extras.price) * itm.quantity : itm.price * itm.quantity}
             </div>
             <div
               className="cart-item-remove"

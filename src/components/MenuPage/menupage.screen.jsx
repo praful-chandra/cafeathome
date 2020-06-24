@@ -15,8 +15,9 @@ function MenuPageScreen(props) {
     if (existingItem) {
       setCart((cartItems) => {
         let newCart = cartItems.map((item) => {
-          if (item._id === newItem._id)
+          if (item._id === newItem._id) {
             return { ...item, quantity: item.quantity + 1 };
+          }
 
           return item;
         });
@@ -25,23 +26,50 @@ function MenuPageScreen(props) {
       });
     } else
       setCart((cartItems) => {
-        let newCart = [...cartItems, { ...newItem, quantity: 1 }];
+        let newCart = [
+          ...cartItems,
+          { ...newItem, quantity: 1, extras: false },
+        ];
         saveToLocal(newCart);
         return newCart;
       });
   };
 
-  const removeFromCart = itemId =>{
-    setCart(olditms=>{
-      const newCart = olditms.filter(itm=> itm._id !== itemId);
+  const removeFromCart = (itemId) => {
+    setCart((olditms) => {
+      const newCart = olditms.filter((itm) => itm._id !== itemId);
       saveToLocal(newCart);
       return newCart;
-    })
-  }
+    });
+  };
 
   const saveToLocal = (newCart) => {
     const jsonString = JSON.stringify(newCart);
     localStorage.setItem("cartItems", jsonString);
+  };
+
+  const addExtras = (newItem) => {
+    let existingItem = cart.find((item) => item._id === newItem._id);
+    if (existingItem) {
+      setCart((cartItems) => {
+        let newCart = cartItems.map((item) => {
+          if (item._id === newItem._id)
+            return { ...item, extras: newItem.extras };
+
+          return item;
+        });
+        saveToLocal(newCart);
+        return newCart;
+      });
+    } else
+      setCart((cartItems) => {
+        let newCart = [
+          ...cartItems,
+          { ...newItem, quantity: 1, extras: newItem.extras },
+        ];
+        saveToLocal(newCart);
+        return newCart;
+      });
   };
 
   return (
@@ -59,9 +87,13 @@ function MenuPageScreen(props) {
               className="floatingCart-content-item"
               key={"itemdloat" + itm._id}
             >
-              <span onClick={()=>removeFromCart(itm._id)} >X</span>
+              <span onClick={() => removeFromCart(itm._id)}>X</span>
 
-              <span>{itm.name}</span>
+              <span>
+                {itm.name}{" "}
+                {itm.extras ? <div>with {itm.extras.name}</div> : null}{" "}
+              </span>
+
               <span>{itm.quantity}</span>
             </div>
           ))}
@@ -79,7 +111,10 @@ function MenuPageScreen(props) {
           <div>Café @ Home</div>
           <div>
             {" "}
-            <FontAwesomeIcon onClick={() => props.history.push("/cart")} icon={faShoppingBag} />{" "}
+            <FontAwesomeIcon
+              onClick={() => props.history.push("/cart")}
+              icon={faShoppingBag}
+            />{" "}
           </div>
         </div>
         <div className="menupage-hero-title">MENU</div>
@@ -97,7 +132,18 @@ function MenuPageScreen(props) {
                         <img src={items.image} alt="" />
                         <span>{items.name}</span>
                         <span>Rs. {items.price}</span>
-                        <button onClick={() => addToCart(items)}>Add</button>
+
+                        <span className="menupage-content-section-btns">
+                          <button onClick={() => addToCart(items)}>Add</button>
+                          {items.extras ? (
+                            <button
+                              onClick={() => addExtras(items)}
+                              className="menupage-content-section-extraBtn"
+                            >
+                              {items.extras.name} <br /> Rs {items.extras.price}
+                            </button>
+                          ) : null}
+                        </span>
                       </div>
                     </li>
                   ))}
