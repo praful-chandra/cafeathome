@@ -20,7 +20,7 @@ const homepage = () => (
     <TopBarComponent />
     <NavbarComponent />
     <HeroComponent />
-    <MenuLiteComponent />
+    {/* <MenuLiteComponent /> */}
     <PromotionalBannerComponent />
     <AboutUsComponent />
     <InfoBannerComponent />
