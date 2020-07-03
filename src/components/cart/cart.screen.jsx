@@ -1,10 +1,14 @@
 import React, { useState } from "react";
 import ButtonComponent from "../button.component";
+import CartOverlay from "./cart.overlay.component";
+
 
 function CartScreen() {
   const [cart, setCart] = useState(
     JSON.parse(localStorage.getItem("cartItems")) || []
   );
+
+  const [form , setform] = useState(false);
 
   const removeFromCart = (itemId) => {
     setCart((olditms) => {
@@ -63,6 +67,7 @@ function CartScreen() {
 
   return (
     <div className="cart-wrapper">
+    {form ?   <CartOverlay cb={()=>{setform(false)}}/> : null}
       <a href="/" style={{ textDecoration: "none" }}>
         <div className="cart-nav">
           <div className="cart-nav-logo">
@@ -105,7 +110,7 @@ function CartScreen() {
 
         <div className="cart-total">
           <div> Rs. {totalPrice()}</div>
-          <ButtonComponent title="Checkout" />
+          <ButtonComponent cb={()=>{setform(true)}} title="Checkout" />
         </div>
       </div>
     </div>
